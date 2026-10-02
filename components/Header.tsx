@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function Header(){return <header className="site-header"><div className="shell nav"><Link className="brand" href="/">SmartAssembly</Link><nav><Link href="/grades">Grades</Link><Link href="/subjects">Subjects</Link><Link href="/resources">Resources</Link></nav><Link className="button small" href="/resources">Browse free resources</Link></div></header>}
