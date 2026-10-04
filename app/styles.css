@@ -7,3 +7,23 @@
 .site-footer{border-top:1px solid var(--line);padding:0;color:var(--muted);font-size:12px}.footer-main{padding:52px 0 42px;display:flex;justify-content:space-between;gap:60px}.footer-brand{max-width:330px}.footer-brand strong{color:var(--ink);font-size:18px}.footer-brand p{line-height:1.6}.footer-links{display:flex;gap:80px}.footer-links>div{display:flex;flex-direction:column;gap:10px;min-width:120px}.footer-links b{color:var(--ink);font-size:11px;margin-bottom:3px}.footer-links a:hover{color:var(--green)}.footer-links em{font-size:7px;font-style:normal;text-transform:uppercase;letter-spacing:.6px;background:var(--soft);padding:3px 5px;border-radius:4px;margin-left:4px}.footer-bottom{border-top:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px}
 @media(max-width:900px){.grade-groups{grid-template-columns:1fr}.promise-grid{grid-template-columns:1fr}.free-copy,.promise-grid{width:50%}.promise-grid>div{padding:24px}.footer-links{gap:35px}}
 @media(max-width:600px){.grade-group-head{flex-direction:column}.grade-group-grid{grid-template-columns:repeat(3,1fr)}.free-banner{flex-direction:column}.free-copy,.promise-grid{width:100%}.free-copy{padding:35px}.promise-grid{grid-template-columns:1fr}.promise-grid>div{border-left:0;border-top:1px solid rgba(255,255,255,.13)}.promise-grid b{margin-bottom:0}.promise-grid strong{margin-top:12px}.footer-main{flex-direction:column;padding:38px 0 28px}.footer-links{display:grid;grid-template-columns:1fr 1fr;gap:25px}.footer-bottom{flex-direction:column}}
+
+/* Final mobile homepage pass */
+@media(max-width:600px){
+  .site-header{position:relative}
+  .nav{padding:12px 0 0;gap:10px}
+  .brand{font-size:20px;padding-bottom:10px}
+  .nav nav{margin:0 -14px;width:calc(100% + 28px);padding:11px 14px;border-top:1px solid var(--line);gap:0}
+  .nav nav a{font-size:13px}
+  .hero-copy{padding-top:38px}
+  .hero-grid{padding-bottom:38px}
+  .hero-copy .lede{margin-bottom:0}
+  .hero-notes{margin-top:25px;padding-top:19px}
+  .preview-wrap{padding-top:8px}
+  .hero-card{border-radius:22px}
+  .section-head{display:block}
+  .section-head>.text-link{display:inline-block;margin-top:14px}
+  .section-head p{max-width:100%}
+  .grade-group:last-child .grade-group-grid{grid-template-columns:repeat(2,1fr)}
+  .grade-group:last-child .grade-card{min-height:92px}
+}
