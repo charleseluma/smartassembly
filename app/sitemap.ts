@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next";import {resources} from "../lib/resources";export default function sitemap():MetadataRoute.Sitemap{const base="https://example.com";return["","/resources","/grades","/subjects",...resources.map(r=>"/resources/"+r.slug)].map(url=>({url:base+url,lastModified:new Date()}))}

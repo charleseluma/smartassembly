@@ -1,0 +1,18 @@
+import Link from "next/link";
+import {resources} from "../../lib/resources";
+import styles from "./refinements.module.css";
+
+const previewMarks:Record<string,string>={"Math":"×","English & Reading":"Aa","Science":"⚗","Social Studies":"◎"};
+const popular=["Multiplication","Reading comprehension","Life science","Algebra","Civics"];
+
+export default function Resources(){return <main>
+<section className="library-hero"><div className={`shell library-hero-inner ${styles.heroInner}`}><div><div className="eyebrow">RESOURCE LIBRARY</div><h1>Find the right resource<br/><span>for the moment.</span></h1><p className="lede narrow">Browse free K–12 worksheets and learning activities by grade, subject, topic, and format.</p></div><div className={`library-stat ${styles.heroStat}`}><strong>{resources.length}</strong><span>sample resources<br/>in this MVP</span></div></div></section>
+
+<section className={`shell library-tools ${styles.tools}`} aria-label="Resource filters"><div className={`search-shell ${styles.search}`}><span aria-hidden="true">⌕</span><input aria-label="Search resources" placeholder="Search topics, skills, or resource titles" disabled/><kbd>Mockup</kbd></div><div className={`filter-row ${styles.filters}`}><div className="filter-control"><label>Grade</label><button type="button">All grades <span>⌄</span></button></div><div className="filter-control"><label>Subject</label><button type="button">All subjects <span>⌄</span></button></div><div className="filter-control"><label>Format</label><button type="button">All formats <span>⌄</span></button></div><div className="filter-control"><label>Sort by</label><button type="button">Featured <span>⌄</span></button></div></div><p className="mock-note">Search and filters are shown for the intended experience and will become functional when the resource catalog is connected.</p></section>
+
+<section className={`shell quick-browse ${styles.topics}`}><span>Popular topics</span>{popular.map(p=><button key={p} type="button">{p}</button>)}</section>
+
+<section className={`shell library-results ${styles.results}`}><div className={`results-head ${styles.resultsHead}`}><div><div className="eyebrow">BROWSE RESOURCES</div><h2>All resources</h2></div><p className={styles.resultsMeta}><strong>{resources.length}</strong><span>resources</span></p></div>
+<div className="library-grid">{resources.map(r=><Link className="library-card" href={"/resources/"+r.slug} key={r.slug}><div className="library-preview"><div className="preview-top"><span>SMARTASSEMBLY</span><span>GRADE {r.grade}</span></div><strong>{previewMarks[r.subject]||"+"}</strong><div className="preview-lines"><i/><i/><i/></div><span className="preview-type">{r.topic}</span></div><div className={`library-card-body ${styles.cardBody}`}><div className="resource-kicker library-kicker"><span>GRADE {r.grade} · {r.subject.toUpperCase()}</span><span>{r.minutes} MIN</span></div><h3>{r.title}</h3><p className={styles.cardDescription}>{r.description}</p><div className={`library-card-bottom ${styles.cardBottom}`}><div>{r.formats.map(f=><span className="pill" key={f}>{f}</span>)}</div><span className="card-arrow">→</span></div></div></Link>)}</div>
+<div className={`catalog-note ${styles.catalog}`}><div><span>Growing library</span><h3>More resources are on the way.</h3><p>The production catalog will grow across every grade and subject while keeping the same simple browsing experience.</p></div><Link className="button" href="/grades">Browse grades →</Link></div></section>
+</main>}
